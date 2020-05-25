@@ -38,7 +38,7 @@ public class DevBootstrap implements ApplicationListener<ContextRefreshedEvent> 
         testItem1.setAmount(5);
         testItem1.setLocation("Raum 2");
         testItem1.setDescription("Omas Bücher");
-        testItem1.setLastUsed(LocalDate.parse("2019-01-01"));
+        testItem1.setLastUsed(LocalDate.parse("2019-01-01")); // oder bei Java Date: Date.valueOf()
         this.repository.save(testItem1);
         
         // Fahrrad

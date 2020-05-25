@@ -7,11 +7,17 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 public class Item {
 	
@@ -24,9 +30,5 @@ public class Item {
 	private String location;
 	private String description;
 	private LocalDate lastUsed;
-
-	public Item() {
-		// TODO Auto-generated constructor stub
-	}
 
 }
