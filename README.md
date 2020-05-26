@@ -223,7 +223,7 @@ Hint: https://gist.github.com/MrSnyder/436f1e985d4ada774a43486100554cbb/
 * [Live-Coding zu MVC-Tests (Februar)](https://www.youtube.com/watch?v=TGcE7lEqhN4&list=PLVBvhDBS_eGWm3_N3sx95lGhBWkxuv_Qn&index=17&t=3513s)
 * [Testing OAuth](https://www.baeldung.com/oauth-api-testing-with-spring-mvc)
 
-* [Assertj]https://assertj.github.io/doc/
+* [Assertj](https://assertj.github.io/doc/)
 
 ### REST-Endpoints
 
