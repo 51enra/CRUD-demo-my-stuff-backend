@@ -1,4 +1,4 @@
-# CRUD-demo-my-stuff-backend
+# 1 CRUD-demo-my-stuff-backend
 
 Challenge: Backend mit Java Spring Boot für eine REST-basierte CRUD-Anwendung
 
@@ -208,9 +208,9 @@ public class SpringFoxConfig {
 
 Hint: https://gist.github.com/MrSnyder/436f1e985d4ada774a43486100554cbb/
 
-# Unit Tests
 
-# Challenge: Integration Tests mit Java Spring Boot für REST-basierte CRUD Anwendung
+
+# 2 Challenge: Integration Tests mit Java Spring Boot für REST-basierte CRUD Anwendung
 
 ## Aufgabe
 
@@ -222,6 +222,8 @@ Hint: https://gist.github.com/MrSnyder/436f1e985d4ada774a43486100554cbb/
 * [Übersicht zu Test-Varianten für Spring Controller](https://thepracticaldeveloper.com/2017/07/30/guide-spring-boot-controller-tests/)
 * [Live-Coding zu MVC-Tests (Februar)](https://www.youtube.com/watch?v=TGcE7lEqhN4&list=PLVBvhDBS_eGWm3_N3sx95lGhBWkxuv_Qn&index=17&t=3513s)
 * [Testing OAuth](https://www.baeldung.com/oauth-api-testing-with-spring-mvc)
+
+* [Assertj]https://assertj.github.io/doc/
 
 ### REST-Endpoints
 
