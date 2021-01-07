@@ -57,7 +57,27 @@ public class DevBootstrap implements ApplicationListener<ContextRefreshedEvent> 
         testItem3.setLocation("Raum 1");
         testItem3.setDescription("Weckgläser mit Dichtgummi");
         testItem3.setLastUsed(LocalDate.parse("2020-02-02"));
-        this.repository.save(testItem3);  
+        this.repository.save(testItem3);
+        
+        // Werkzeug
+        Item testItem4 = Item.builder()
+        		.name("Werkzeuge") //
+        		.amount(8) //
+        		.location("Room 1")
+        		.description("Hammer, Säge, Schraubzwingen, Maulschlüssel") //
+        		.lastUsed(LocalDate.of(2012, 06, 02))
+        		.build();
+        this.repository.save(testItem4);
+        
+        // Elektrik
+        Item testItem5 = Item.builder()
+        		.name("Elektromaterial") //
+        		.amount(5) //
+        		.location("Room 3")
+        		.description("Glühbirnen, Schalter, Kabel") //
+        		.lastUsed(LocalDate.of(2015, 03, 06))
+        		.build();
+        this.repository.save(testItem5); 
 
     }
 

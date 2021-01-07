@@ -20,7 +20,7 @@ import org.springframework.http.ResponseEntity;
 
 import static org.assertj.core.api.Assertions.*;
 
-@SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
+//@SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 public class ItemRestControllerTest {
 
 	private static final String BASE_PATH = "/api/v1/items";
@@ -55,12 +55,17 @@ public class ItemRestControllerTest {
 		Item lawnTrimmer = givenAnotherInsertedItem().getBody();
 		// When | Act
 		ResponseEntity<Item[]> response = restTemplate.getForEntity(BASE_PATH, Item[].class);
+		// Es geht auch ResponseEntity<List> mit List.class, dann wird eine linked HashMap zurückgegeben.
 		// Then | Assert
 		assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
-		assertThat(response.getBody().length).isEqualTo(2);
+		assertThat(response.getBody().length == 2);
 		assertThat(response.getBody()[0]).isEqualToComparingFieldByField(lawnMower);
 		assertThat(response.getBody()[1]).isEqualToComparingFieldByField(lawnTrimmer);
+		// Alternative ohne id zu setzen:
+		assertThat(response.getBody()[1]).isEqualToComparingOnlyGivenFields(lawnTrimmer, "name", "amount", "lastUsed", "description", "location");
 	}
+	
+	
 	
 
 	@Test
@@ -121,6 +126,7 @@ public class ItemRestControllerTest {
 		headers.setContentType(MediaType.APPLICATION_JSON);
 		URI uri = new URI(restTemplate.getRootUri() + BASE_PATH + "/" + lawnMower.getId());
 		HttpEntity<Item> requestUpdate = new HttpEntity<Item>(lawnTrimmer, headers);
+		// geht auch ähnlich wie bei delete: new RequestEntity<>(lawnTrimmer, HttpMethod.PUT, uri)
 		ResponseEntity<Item> response = restTemplate.exchange(uri, HttpMethod.PUT, requestUpdate, Item.class);
 		lawnTrimmer.setId(lawnMower.getId());
 		// Then | Assert
